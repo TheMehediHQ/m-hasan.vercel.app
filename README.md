@@ -1,17 +1,17 @@
-# Redicti-m-hasan
+# m-hasan.vercel.app
 
 > An ultra-fast, modern redirect website built with [Astro](https://astro.build). Automatically redirects visitors from **[m-hasan.vercel.app](https://m-hasan.vercel.app)** to **[mehedi-hasan.me](https://mehedi-hasan.me)**.
 
 [![Live URL](https://img.shields.io/badge/Live%20URL-m--hasan.vercel.app-000000?style=for-the-badge&logo=vercel)](https://m-hasan.vercel.app)
 [![Target Destination](https://img.shields.io/badge/Redirects%20To-mehedi--hasan.me-38bdf8?style=for-the-badge)](https://mehedi-hasan.me)
-[![GitHub Repository](https://img.shields.io/badge/Repository-TheMehediHQ%2FRedicti--m--hasan-blue?style=for-the-badge&logo=github)](https://github.com/TheMehediHQ/Redicti-m-hasan)
+[![GitHub Repository](https://img.shields.io/badge/Repository-TheMehediHQ%2Fm--hasan.vercel.app-blue?style=for-the-badge&logo=github)](https://github.com/TheMehediHQ/m-hasan.vercel.app)
 
 ---
 
 ## 📌 Project Overview
 
-- **Project Name:** `m-hasan` (Redicti-m-hasan)
-- **Repository:** [`TheMehediHQ/Redicti-m-hasan`](https://github.com/TheMehediHQ/Redicti-m-hasan)
+- **Project Name:** `m-hasan.vercel.app`
+- **Repository:** [`TheMehediHQ/m-hasan.vercel.app`](https://github.com/TheMehediHQ/m-hasan.vercel.app)
 - **Source URL:** [https://m-hasan.vercel.app](https://m-hasan.vercel.app)
 - **Target Destination:** [https://mehedi-hasan.me](https://mehedi-hasan.me)
 
@@ -42,8 +42,8 @@
 
 ```bash
 # Clone the repository
-git clone https://github.com/TheMehediHQ/Redicti-m-hasan.git
-cd Redicti-m-hasan
+git clone https://github.com/TheMehediHQ/m-hasan.vercel.app.git
+cd m-hasan.vercel.app
 
 # Install dependencies
 npm install
@@ -74,9 +74,9 @@ Production static assets will be output to the `dist/` folder.
 
 ### Vercel (Recommended)
 1. Push your code to GitHub.
-2. Import repository `TheMehediHQ/Redicti-m-hasan` into [Vercel](https://vercel.com).
+2. Import repository `TheMehediHQ/m-hasan.vercel.app` into [Vercel](https://vercel.com).
 3. The framework will be automatically detected as **Astro**.
-4. Set the custom domain or project name to **`m-hasan.vercel.app`**.
+4. Set the project name / domain to **`m-hasan.vercel.app`**.
 5. Deploy. `vercel.json` will automatically manage 301 edge redirects.
 
 ### Cloudflare Pages
