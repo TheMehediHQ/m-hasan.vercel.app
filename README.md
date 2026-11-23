@@ -1,71 +1,100 @@
 # Redicti-m-hasan
 
-An ultra-fast, robust redirect website built with [Astro](https://astro.build). Once deployed, any visitor will automatically and instantly be redirected to [https://mehedi-hasan.me](https://mehedi-hasan.me).
+> An ultra-fast, modern redirect website built with [Astro](https://astro.build). Automatically redirects visitors from **[m-hasan.vercel.app](https://m-hasan.vercel.app)** to **[mehedi-hasan.me](https://mehedi-hasan.me)**.
+
+[![Live URL](https://img.shields.io/badge/Live%20URL-m--hasan.vercel.app-000000?style=for-the-badge&logo=vercel)](https://m-hasan.vercel.app)
+[![Target Destination](https://img.shields.io/badge/Redirects%20To-mehedi--hasan.me-38bdf8?style=for-the-badge)](https://mehedi-hasan.me)
+[![GitHub Repository](https://img.shields.io/badge/Repository-TheMehediHQ%2FRedicti--m--hasan-blue?style=for-the-badge&logo=github)](https://github.com/TheMehediHQ/Redicti-m-hasan)
 
 ---
 
-## ⚡ Features (কি কি সুবিধা আছে)
+## 📌 Project Overview
 
-1. **3-Layer Redirection**:
-   - **Edge / Server-level 301 Redirect**: Via `_redirects` (Netlify, Cloudflare Pages) and `vercel.json` (Vercel) for instant HTTP 301 redirection without waiting for HTML to load.
-   - **Immediate Client-side JavaScript**: Uses `window.location.replace()` in the `<head>` so the browser doesn't push a dummy history state (preserves the Back button).
-   - **HTML `<meta http-equiv="refresh">`**: Fallback for browsers or bots with JavaScript disabled.
-2. **SEO Friendly**:
-   - `rel="canonical"` pointed directly to `https://mehedi-hasan.me/`.
-   - `robots: "noindex, follow"` prevents search engine duplicate indexing while preserving link equity.
+- **Project Name:** `m-hasan` (Redicti-m-hasan)
+- **Repository:** [`TheMehediHQ/Redicti-m-hasan`](https://github.com/TheMehediHQ/Redicti-m-hasan)
+- **Source URL:** [https://m-hasan.vercel.app](https://m-hasan.vercel.app)
+- **Target Destination:** [https://mehedi-hasan.me](https://mehedi-hasan.me)
+
+---
+
+## ⚡ Key Features
+
+1. **Triple-Layer Redirection System**:
+   - **Edge / Server-Level 301 Redirect**: Powered by `vercel.json` (for Vercel) and `_redirects` (for Netlify and Cloudflare Pages) for instant, zero-delay HTTP 301 redirection at the edge before any HTML is parsed.
+   - **Immediate Client-Side JavaScript**: Executes `window.location.replace()` in the document `<head>` to immediately route users without polluting the browser's Back button history.
+   - **HTML `<meta http-equiv="refresh">`**: Fallback mechanism for bots, scrapers, or browser clients with JavaScript disabled.
+2. **SEO & Link Equity Preservation**:
+   - Includes `rel="canonical"` pointed directly to `https://mehedi-hasan.me/`.
+   - Employs `robots: "noindex, follow"` to prevent search engines from treating the redirect domain as duplicate content while passing along page authority.
 3. **Catch-All 404 Fallback**:
-   - `404.html` also redirects to `https://mehedi-hasan.me/` (if someone visits `/anything`).
-4. **Clean Fallback UI**:
-   - Modern dark mode card with spinner and direct clickable link if the browser delays redirection.
+   - Includes a dedicated `404.astro` page so any requested subpath (e.g., `/about`, `/projects`) automatically redirects to the destination root.
+4. **Modern Fallback UI**:
+   - Elegant dark-mode interface with a loading spinner and manual destination link in case client redirection is delayed.
 
 ---
 
-## 🚀 How to Run Locally (লোকালি টেস্ট করার নিয়ম)
+## 🚀 Local Development
+
+### Prerequisites
+- Node.js (`>= 22.12.0`) or [Bun](https://bun.sh)
+
+### Installation & Run
 
 ```bash
-# Using bun:
-bun run dev
+# Clone the repository
+git clone https://github.com/TheMehediHQ/Redicti-m-hasan.git
+cd Redicti-m-hasan
 
-# Or using npm:
+# Install dependencies
+npm install
+# or
+bun install
+
+# Start the local development server
 npm run dev
+# or
+bun run dev
 ```
 
-Build for production:
+Visit `http://localhost:4321` in your browser to test the redirection.
+
+### Build for Production
+
 ```bash
-bun run build
-# Or:
 npm run build
+# or
+bun run build
 ```
-The static output will be created inside the `dist/` directory.
+
+Production static assets will be output to the `dist/` folder.
 
 ---
 
-## 🌐 Deployment Options (যেখানে খুশি হোস্ট করতে পারেন)
+## 🌐 Deployment
 
-### 1. Vercel (Recommended)
-1. Push this repository to GitHub.
-2. Go to [vercel.com](https://vercel.com) -> **Add New Project**.
-3. Import this repository.
-4. Framework Preset will be automatically detected as **Astro**.
-5. Click **Deploy**. (`vercel.json` handles instant 301 redirect).
+### Vercel (Recommended)
+1. Push your code to GitHub.
+2. Import repository `TheMehediHQ/Redicti-m-hasan` into [Vercel](https://vercel.com).
+3. The framework will be automatically detected as **Astro**.
+4. Set the custom domain or project name to **`m-hasan.vercel.app`**.
+5. Deploy. `vercel.json` will automatically manage 301 edge redirects.
 
-### 2. Cloudflare Pages
-1. Push to GitHub.
-2. In Cloudflare Dashboard, go to **Workers & Pages** -> **Create application** -> **Pages**.
-3. Connect your repository.
-4. Build settings:
+### Cloudflare Pages
+1. Connect repository in Cloudflare Dashboard under **Workers & Pages** > **Pages**.
+2. Build Settings:
    - Framework preset: `Astro`
    - Build command: `npm run build`
-   - Build output directory: `dist`
-5. Click **Save and Deploy**. (The `_redirects` file handles edge 301 redirect).
+   - Output directory: `dist`
+3. Deploy. The `_redirects` file automatically handles edge redirection.
 
-### 3. Netlify
-1. Go to [netlify.com](https://netlify.com) -> **Add new site** -> **Import an existing project**.
-2. Select this repository.
-3. Build command: `npm run build`
-4. Publish directory: `dist`
-5. Click **Deploy**.
+### Netlify
+1. Import repository into Netlify.
+2. Build command: `npm run build`
+3. Publish directory: `dist`
+4. Deploy.
 
-### 4. GitHub Pages / Static Hosting (cPanel / S3 / Apache / Nginx)
-- Run `npm run build` or `bun run build`.
-- Upload the contents of the `dist/` folder directly to your hosting / webroot.
+---
+
+## 📄 License
+
+MIT © [Mehedi Hasan](https://mehedi-hasan.me)
